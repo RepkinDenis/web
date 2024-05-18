@@ -11,30 +11,6 @@
     <link href="./Gallery/index.css" rel="stylesheet" />
     <link href="./Gallery/gallery-lib/gallery.css" rel="stylesheet" />
     <script src="./Gallery/gallery-lib/gallery.js"></script>
-    <script>
-        function togglePopup_login() {
-          var popup = document.getElementById("form");
-          if (popup.style.opacity === "0") {
-            popup.style.display = "block";
-            setTimeout(function() {
-            popup.style.opacity = "1";
-            }, 10); 
-        } else {
-            popup.style.opacity = "0";
-            setTimeout(function() {
-            popup.style.display = "none";
-            }, 300); 
-        }
-        }
-        function togglePopup_bars() {
-          var popup = document.getElementById("bars_panel");
-          if (popup.style.left === "-400px") {
-                popup.style.left = "0";
-            } else {
-                popup.style.left = "-400px";
-            }
-        }
-      </script>
   </head>
   <body>
     <div class="base">
@@ -141,8 +117,63 @@
                 </div>
         </div>
             <script src="./Gallery/index.js"></script>
+        <form class="card" id="form" enctype="multipart/form-data">
+            <h2 style="text-align: center;">Вход</h2>
+        
+            <label for="email">
+                Почта
+                <br><br>
+                <input
+                    type="text"
+                    id="email"
+                    class="inp"
+                    name="email"
+                    placeholder="example@email.com"
+                ><br><br>
+            </label>
+        
+            <label for="password">
+                Пароль
+                <br><br>
+                <input
+                    type="password"
+                    id="password"
+                    class="inp"
+                    name="password"
+                    placeholder="******"
+                ><br><br>
+            </label>
+        
+            <button
+                type="submit"
+                id="submit"
+            >Продолжить</button><br>
+        
+            <p style="text-align: center;"> Нет профиля? </p>
+            <button 
+            id="reg" 
+            formaction = 'php/registration.php'>Зарегистрироваться</button>
+            <button id="cross" formaction = 'index.php'  onclick="togglePopup_login()"></button>
+        </form> 
 
 
+
+        <script>
+            var form = document.getElementById("form");
+            const errorNotice = document.querySelector('.notice.error');
+            if (errorNotice) {
+                form.style.display = "block";
+                setTimeout(function() {
+                form.style.opacity = "1";
+                }, 10);
+            } else {
+                form.style.opacity = "0";
+                setTimeout(function() {
+                form.style.display = "none";
+                }, 300);
+                
+            }
+        </script>
 
       <div id="header">
             <img id="img_header" src="../../images/home_page/logo.png" alt="logo"/>
@@ -219,5 +250,29 @@
             </div>
       </div>
     </div>
+     <script>
+        function togglePopup_login() {
+          var popup = document.getElementById("form");
+          if (popup.style.opacity === "0") {
+            popup.style.display = "block";
+            setTimeout(function() {
+            popup.style.opacity = "1";
+            }, 10); 
+        } else {
+            popup.style.opacity = "0";
+            setTimeout(function() {
+            popup.style.display = "none";
+            }, 300); 
+        }
+        }
+        function togglePopup_bars() {
+          var popup = document.getElementById("bars_panel");
+          if (popup.style.left === "-400px") {
+                popup.style.left = "0";
+            } else {
+                popup.style.left = "-400px";
+            }
+        }
+      </script>
   </body>
 </html>

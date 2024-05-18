@@ -1,5 +1,4 @@
 <?php
-  require_once __DIR__ . '../../authorization/src/helpers_singup.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,7 +11,7 @@
   <body>
     <div id="base">
 
-      <form class="card" action="../../authorization/src/actions/singup.php" method="post">
+      <form class="card">
         <label for="name">
             Имя
             <br><br>
@@ -22,12 +21,7 @@
                 class="inp"
                 name="name"
                 placeholder="Иванов Иван"
-                value="<?php echo old('name') ?>"
-                <?php echo validationErrorAttr('name'); ?>
             >
-            <?php if(hasValidationError('name')): ?>
-                <small><?php echo validationErrorMessage('name'); ?></small>
-            <?php endif; ?>
         </label>
     
         <br><br>
@@ -40,12 +34,7 @@
                 class="inp"
                 name="email"
                 placeholder="example@gmail.com"
-                value="<?php echo old('email') ?>"
-                <?php echo validationErrorAttr('email'); ?>
             >
-            <?php if(hasValidationError('email')): ?>
-                <small><?php echo validationErrorMessage('email'); ?></small>
-            <?php endif; ?>
         </label>
     
         <br><br>
@@ -58,12 +47,7 @@
                 class="inp"
                 name="phone"
                 placeholder="+7 888 888 88 88"
-                value="<?php echo old('phone') ?>"
-                <?php echo validationErrorAttr('phone'); ?>
             >
-            <?php if(hasValidationError('phone')): ?>
-                <small><?php echo validationErrorMessage('phone'); ?></small>
-            <?php endif; ?>
         </label>
 
     
@@ -84,13 +68,8 @@
       </form>
 
       <br><br>
-      <button id="tariff" class="btn" onclick="window.location.href = 'tariff.php'">Подробнее о тарифах</button>
 
       <img id="gall1" src="../images/singup/call.png"/>
-
-      <img id="gall2" src="../images/singup/singup.png"/>
-
-      <img id="gall3" src="../images/singup/idea.png"/>
 
       <div id="main_text" >
         <p style="font-size:72px;"><span id="title">Запись на занятие</span></p>

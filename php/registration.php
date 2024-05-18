@@ -1,7 +1,4 @@
 <?php
-require_once __DIR__ . '../../authorization/src/helpers.php';
-
-checkGuest();
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +15,7 @@ checkGuest();
             <p style="font-size:28px;"><span>Регистрация</span></p>
         </div>
 
-      <form class="card" action="../../authorization/src/actions/register.php" method="post" enctype="multipart/form-data">
+      <form class="card" enctype="multipart/form-data">
         <h2 style="text-align: center;">Регистрация</h2>
     
         <label for="name">
@@ -30,12 +27,7 @@ checkGuest();
                 class="inp"
                 name="name"
                 placeholder="Иванов Иван"
-                value="<?php echo old('name') ?>"
-                <?php echo validationErrorAttr('name'); ?>
             >
-            <?php if(hasValidationError('name')): ?>
-                <small><?php echo validationErrorMessage('name'); ?></small>
-            <?php endif; ?>
         </label>
     
         <br><br>
@@ -48,12 +40,7 @@ checkGuest();
                 class="inp"
                 name="email"
                 placeholder="example@gmail.com"
-                value="<?php echo old('email') ?>"
-                <?php echo validationErrorAttr('email'); ?>
             >
-            <?php if(hasValidationError('email')): ?>
-                <small><?php echo validationErrorMessage('email'); ?></small>
-            <?php endif; ?>
         </label>
     
         <br><br>
@@ -63,11 +50,7 @@ checkGuest();
                 type="file"
                 id="avatar"
                 name="avatar"
-                <?php echo validationErrorAttr('avatar'); ?>
             >
-            <?php if(hasValidationError('avatar')): ?>
-                <small><?php echo validationErrorMessage('avatar'); ?></small>
-            <?php endif; ?>
         </label>
     
         <br><br>
@@ -81,11 +64,7 @@ checkGuest();
                     class="inp"
                     name="password"
                     placeholder="******"
-                    <?php echo validationErrorAttr('password'); ?>
                 >
-                <?php if(hasValidationError('password')): ?>
-                    <small><?php echo validationErrorMessage('password'); ?></small>
-                <?php endif; ?>
             </label>
             
             <br><br>
