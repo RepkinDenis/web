@@ -117,46 +117,6 @@
                 </div>
         </div>
             <script src="./Gallery/index.js"></script>
-        <form class="card" id="form">
-            <h2 style="text-align: center;">Вход</h2>
-        
-            <label for="email">
-                Почта
-                <br><br>
-                <input
-                    type="text"
-                    id="email"
-                    class="inp"
-                    name="email"
-                    placeholder="example@email.com"
-                ><br><br>
-            </label>
-        
-            <label for="password">
-                Пароль
-                <br><br>
-                <input
-                    type="password"
-                    id="password"
-                    class="inp"
-                    name="password"
-                    placeholder="******"
-                ><br><br>
-            </label>
-        
-            <button
-                type="submit"
-                id="submit"
-            >Продолжить</button><br>
-        
-            <p style="text-align: center;"> Нет профиля? </p>
-            <button 
-            id="reg" 
-            formaction = 'php/registration.php'>Зарегистрироваться</button>
-            <button id="cross" formaction = 'index.php'  onclick="togglePopup_login()"></button>
-        </form> 
-
-
 
         <script>
             var form = document.getElementById("form");
