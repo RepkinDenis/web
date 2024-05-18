@@ -117,7 +117,7 @@
                 </div>
         </div>
             <script src="./Gallery/index.js"></script>
-        <form class="card" id="form" enctype="multipart/form-data">
+        <form class="card" id="form">
             <h2 style="text-align: center;">Вход</h2>
         
             <label for="email">
