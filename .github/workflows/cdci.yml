@@ -30,6 +30,4 @@ jobs:
             password: ${{ secrets.BEGET_PASSWORD }}
             script: |
                 cd repkin0q.beget.tech/public_html
-                git stash
                 git pull origin main
-                git stash drop
